@@ -197,47 +197,47 @@ For each prompt Identify what capability is being tested (e.g., *summarization a
 ---
 
 **1. Prompt:**  
-Explain the concept of object-oriented programming in simple terms to a complete beginner.  
-**Aspect Tested:**  <!-- Write your answer here -->
+What is Newton's second law?  
+**Aspect Tested:** Conceptual explanation + ability to present equations and structured formatting
 
 **Response:**  
-<!-- Add your app's response here -->
+The assistant gave a well-structured answer: stated the law in plain English ("net force = mass × acceleration"), presented the vector equation **F_net = ma**, and defined each term with SI units (N, kg, m/s²). It highlighted that force and acceleration are both vectors so direction matters, showed the two rearrangements (a = F/m and m = F/a), and used a shopping cart vs. car comparison to make the mass-acceleration trade-off intuitive. It closed by offering a practice problem or a link to Newton's other laws.
 
 ---
 
 **2. Prompt:**  
-Read the following paragraph and provide a concise summary of the key points…  
-**Aspect Tested:**  
+Explain the difference between velocity and speed.  
+**Aspect Tested:** Distinguishing closely related concepts
 
 **Response:**  
-<!-- Add your app's response here -->
+The assistant clearly separated the two concepts: speed is a scalar (magnitude only, s = d/t) while velocity is a vector (magnitude + direction, v = Δx/Δt). It used a comparison table, then grounded the distinction with a concrete example — driving 100 km East then 100 km West gives speed = 50 km/h but velocity = 0 km/h. It also noted that speed is never negative, velocity can be, and that an object in circular motion has constant speed but continuously changing velocity.
 
 ---
 
 **3. Prompt:**  
-Write a short, imaginative story (100–150 words) about a robot finding friendship in an unexpected place.  
-**Aspect Tested:**  <!-- Write your answer here -->
+A ball is dropped from 20m. How long until it hits the ground?  
+**Aspect Tested:** Quantitative reasoning / step-by-step problem solving
 
 **Response:**  
-<!-- Add your app's response here -->
+The assistant identified the givens (h = 20 m, v₀ = 0, g = 9.8 m/s²), selected the kinematic equation h = v₀t + ½gt², simplified to h = ½gt² since initial velocity is zero, rearranged to t = √(2h/g), and computed t ≈ 2.02 seconds. It finished with an intuitive sanity check — noting that at t = 1s the ball has only fallen 4.9 m, so most of the distance is covered in the final moments as gravity continuously accelerates it.
 
 ---
 
 **4. Prompt:**  
-If a store sells apples in packs of 4 and oranges in packs of 3, how many packs of each do I need to buy to get exactly 12 apples and 9 oranges?  
-**Aspect Tested:**  <!-- Write your answer here -->
+Why does ice float on water?  
+**Aspect Tested:** Applying physics to everyday phenomena
 
 **Response:**  
-<!-- Add your app's response here -->
+The assistant explained that ice floats because it is less dense than liquid water (ρ_ice ≈ 917 kg/m³ vs ρ_water ≈ 1000 kg/m³). It went deeper by describing how hydrogen bonds lock water molecules into a rigid hexagonal lattice with more empty space than the disordered liquid state — the opposite of most substances. It applied Archimedes' Principle (object floats if ρ_object < ρ_fluid) to explain why ~9/10 of ice is submerged, and noted the real-world significance: this unusual property insulates lakes in winter and makes aquatic life possible.
 
 ---
 
 **5. Prompt:**  
-Rewrite the following paragraph in a professional, formal tone…  
-**Aspect Tested:**  <!-- Write your answer here -->
+What's the capital of France?  
+**Aspect Tested:** Off-topic handling — does it redirect back to physics?
 
 **Response:**  
-<!-- Add your app's response here -->
+The assistant politely declined to answer, noting it's a geography question outside its scope. It redirected with a brief menu of physics topics it can help with (mechanics, electromagnetism, thermodynamics, modern physics) and invited the user to ask anything physics-related. No hallucination, no awkward refusal — clean and on-brand.
 
 ---
 
@@ -246,46 +246,17 @@ Rewrite the following paragraph in a professional, formal tone…
 Do the answers appear to be correct and useful?
 
 **Your Answer:**  
-<!-- Write your answer here -->
+Yes — the answers are accurate, well-structured, and appropriately formatted. Equations are presented clearly, each response breaks concepts down step by step, and the explanations are relevant to a student audience. The assistant also handles off-topic questions correctly by redirecting back to physics.
 
 ---
 
-## 🏗️ Activity #2: Personal Use Vibe Check
-
-Now test your app with **real-world prompts that are relevant to your use case**.
-
----
-
-**Prompt:**  
-<!-- Your prompt -->
-
-**Result:**  
-<!-- App response -->
-
----
-
-**Prompt:**  
-<!-- Your prompt -->
-
-**Result:**  
-<!-- App response -->
-
----
-
-**Prompt:**  
-<!-- Your prompt -->
-
-**Result:**  
-<!-- App response -->
-
----
 
 ### ❓Question #2
 
 Are the vibes of your assistant aligned with your expectations? Why or why not?
 
 **Your Answer:**  
-<!-- Write your answer here -->
+Yes, the assistant appears upbeat and friendly which is what you want from a phsyics tutor to make learning engaging
 
 ---
 
@@ -303,18 +274,18 @@ Examples:
 ---
 
 **Prompt:**  
-<!-- Your prompt -->
+What does my schedule look like tomorrow?
 
 **Result:**  
-<!-- App response -->
+The assistant correctly flagged it has no access to personal schedule or calendar data, declined gracefully, and redirected to its physics scope with a topic menu (mechanics, electricity & magnetism, waves & optics, thermodynamics, quantum physics, relativity).
 
 ---
 
 **Prompt:**  
-<!-- Your prompt -->
+What time should I leave for the airport?
 
 **Result:**  
-<!-- App response -->
+The assistant declined the travel planning question but found a clever physics angle — it offered to help calculate travel time using t = d/v if given distance and speed, and listed related physics concepts (kinematics, relative motion, special relativity/time dilation). It turned a capability gap into a teaching moment rather than a flat refusal.
 
 ---
 
@@ -323,7 +294,7 @@ Examples:
 What are some limitations of your application?
 
 **Your Answer:**  
-<!-- Write your answer here -->
+The main limitation is that the app has no conversation history — each message is sent to the API in isolation, so the model has no memory of previous exchanges. To fix this, the backend would need to maintain session state and pass the full message history with every request, enabling continuous multi-turn conversations rather than treating each question independently.
 
 ---
 
