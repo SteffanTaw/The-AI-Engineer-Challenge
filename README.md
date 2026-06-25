@@ -317,6 +317,10 @@ Then rerun your vibe check and document:
 
 ---
 
+## Deployment Notes
+
+This application runs fully on localhost using the Accenture Azure Claude endpoint (lgts1tetamapi01.azure-api.net). The backend requires an internal Accenture subscription key passed as a query parameter. Because the Azure endpoint is only accessible within the Accenture corporate network, the live Vercel deployment cannot reach the backend from external servers. The app works correctly when run locally with the backend on http://localhost:8000. For demonstration purposes, the GitHub repository contains the full working code and the Vercel deployment serves the frontend successfully.
+
 ## 📦 Submission Instructions
 
 1. Complete this section directly in your README
